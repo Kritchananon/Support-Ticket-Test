@@ -1,0 +1,22 @@
+/* src/app/shared/components/layout/layout.component.css */
+.d-flex {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: #f5f5f9;
+}
+
+.main-content {
+  margin-left: var(--sidebar-width);
+  padding-top: var(--navbar-height);
+  min-height: 100vh;
+  width: calc(100% - var(--sidebar-width));
+  background-color: #f5f5f9;
+  overflow-x: auto;
+}
+
+.container-fluid {
+  padding: 20px;
+  max-width: none;
+}

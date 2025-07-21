@@ -1,0 +1,65 @@
+{
+  "sidebar": {
+    "logo": "Support Ticket",
+    "dashboard": "Dashboard",
+    "newTicket": "New Ticket",
+    "allTickets": "All Tickets",
+    "report": "Report",
+    "settings": "Settings"
+  },
+  "navbar": {
+    "language": "Language",
+    "thai": "Thai",
+    "english": "English",
+    "profile": "My Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "selectMonth": "Select Month",
+    "selectYear": "Select Year",
+    "totalTickets": "Total Tickets",
+    "newTickets": "New Tickets",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "dailyChart": "Daily Report",
+    "monthlyChart": "Monthly Report",
+    "categoryChart": "Category Breakdown"
+  },
+  "newTicket": {
+    "title": "New Ticket",
+    "ticketTitle": "Ticket Title",
+    "category": "Category",
+    "priority": "Priority",
+    "description": "Description",
+    "attachment": "Attachment",
+    "submit": "Submit Ticket",
+    "cancel": "Cancel",
+    "selectCategory": "Select Category",
+    "selectPriority": "Select Priority",
+    "priorities": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "urgent": "Urgent"
+    }
+  },
+  "allTickets": {
+    "title": "All Tickets",
+    "search": "Search",
+    "filter": "Filter",
+    "status": "Status",
+    "created": "Created Date",
+    "actions": "Actions",
+    "view": "View",
+    "edit": "Edit",
+    "delete": "Delete",
+    "statusOptions": {
+      "all": "All",
+      "new": "New",
+      "inProgress": "In Progress",
+      "completed": "Completed"
+    }
+  }
+}

@@ -1,0 +1,131 @@
+/* src/app/shared/components/navbar/navbar.component.css */
+.navbar {
+  height: var(--navbar-height);
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(134, 134, 134, 0.25);
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  z-index: 999;
+  width: calc(100% - var(--sidebar-width));
+  border: none;
+  padding: 0;
+}
+
+.navbar .container-fluid {
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Language Selector Styles */
+.nav-item.dropdown .btn {
+  border: 1px solid #d9d9d9;
+  background: #ffffff;
+  color: #202020;
+  font-family: 'Noto Sans Thai';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  padding: 6px 12px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+}
+
+.nav-item.dropdown .btn:hover,
+.nav-item.dropdown .btn:focus {
+  background: #f8f9fa;
+  border-color: #5873f8;
+  box-shadow: none;
+}
+
+.nav-item.dropdown .btn img {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+}
+
+/* User Dropdown Styles */
+.nav-item:last-child .btn {
+  background: transparent;
+  border: none;
+  color: #202020;
+  font-family: 'Noto Sans Thai';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  padding: 0;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-item:last-child .btn:hover,
+.nav-item:last-child .btn:focus {
+  background: transparent;
+  color: #5873f8;
+  box-shadow: none;
+}
+
+.nav-item:last-child .btn img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #d9d9d9;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  margin-top: 4px;
+}
+
+.dropdown-item {
+  font-family: 'Noto Sans Thai';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #202020;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #5873f8;
+}
+
+.dropdown-item i {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+}
+
+.dropdown-divider {
+  margin: 4px 0;
+  border-color: #ececec;
+}

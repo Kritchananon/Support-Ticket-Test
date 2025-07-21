@@ -1,0 +1,80 @@
+<!-- src/app/shared/components/navbar/navbar.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <div class="navbar-nav ms-auto">
+      
+      <!-- Language Selector -->
+      <div class="nav-item dropdown">
+        <button class="btn dropdown-toggle" 
+                type="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+          <img [src]="getCurrentLanguageFlag()" 
+               alt="Language" 
+               width="20" 
+               height="15">
+          <span>{{ getCurrentLanguageLabel() }}</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <button class="dropdown-item" 
+                    type="button"
+                    (click)="changeLanguage('th')">
+              <img src="/assets/images/th-flag.png" 
+                   alt="Thai" 
+                   width="20" 
+                   height="15">
+              <span>{{ languageService.translate('navbar.thai') }}</span>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" 
+                    type="button"
+                    (click)="changeLanguage('en')">
+              <img src="/assets/images/en-flag.png" 
+                   alt="English" 
+                   width="20" 
+                   height="15">
+              <span>{{ languageService.translate('navbar.english') }}</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- User Dropdown -->
+      <div class="nav-item dropdown">
+        <button class="btn dropdown-toggle" 
+                type="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+          <img src="/assets/images/user-avatar.png" 
+               alt="User" 
+               width="28" 
+               height="28">
+          <span>Hi, wasan</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a class="dropdown-item" href="#" role="button">
+              <i class="bi bi-person-circle"></i>
+              <span>{{ languageService.translate('navbar.profile') }}</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" role="button">
+              <i class="bi bi-gear"></i>
+              <span>{{ languageService.translate('navbar.settings') }}</span>
+            </a>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li>
+            <a class="dropdown-item" href="#" role="button">
+              <i class="bi bi-box-arrow-right"></i>
+              <span>{{ languageService.translate('navbar.logout') }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

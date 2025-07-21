@@ -1,0 +1,87 @@
+<!-- src/app/shared/components/sidebar/sidebar.component.html -->
+<div class="sidebar bg-white border-end position-fixed h-100">
+  <!-- Logo Section -->
+  <div class="d-flex align-items-center p-3 border-bottom">
+    <div class="logo-container me-3">
+      <div class="logo-circle d-flex align-items-center justify-content-center">
+        <i class="bi bi-ticket-perforated text-primary fs-4"></i>
+      </div>
+    </div>
+    <h5 class="mb-0 text-primary fw-bold text-uppercase">{{ languageService.translate('sidebar.logo') }}</h5>
+  </div>
+
+  <!-- Navigation Menu -->
+  <nav class="nav flex-column p-0">
+    <a routerLink="/dashboard" 
+       routerLinkActive="active"
+       class="nav-link d-flex align-items-center px-3 py-3 text-decoration-none menu-item">
+      <i class="bi bi-speedometer2 me-3"></i>
+      <span>{{ languageService.translate('sidebar.dashboard') }}</span>
+    </a>
+    
+    <a routerLink="/new-ticket" 
+       routerLinkActive="active"
+       class="nav-link d-flex align-items-center px-3 py-3 text-decoration-none menu-item">
+      <i class="bi bi-plus-circle me-3"></i>
+      <span>{{ languageService.translate('sidebar.newTicket') }}</span>
+    </a>
+    
+    <a routerLink="/all-tickets" 
+       routerLinkActive="active"
+       class="nav-link d-flex align-items-center px-3 py-3 text-decoration-none menu-item">
+      <i class="bi bi-list-ul me-3"></i>
+      <span>{{ languageService.translate('sidebar.allTickets') }}</span>
+    </a>
+
+    <!-- Report Section -->
+    <div class="menu-section">
+      <div class="nav-link d-flex align-items-center justify-content-between px-3 py-3 menu-item cursor-pointer"
+           (click)="toggleReportMenu()">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-graph-up me-3"></i>
+          <span>{{ languageService.translate('sidebar.report') || 'Report' }}</span>
+        </div>
+        <i class="bi bi-chevron-down" [class.rotate-180]="reportMenuOpen"></i>
+      </div>
+      
+      <div class="submenu" [class.show]="reportMenuOpen">
+        <a routerLink="/reports/weekly" class="nav-link px-5 py-2 text-decoration-none submenu-item">
+          <span>Weekly Report</span>
+        </a>
+        <a routerLink="/reports/monthly" class="nav-link px-5 py-2 text-decoration-none submenu-item">
+          <span>Monthly Report</span>
+        </a>
+        <a routerLink="/reports/export" class="nav-link px-5 py-2 text-decoration-none submenu-item">
+          <span>Export Ticket</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Settings Section -->
+    <div class="menu-section">
+      <div class="nav-link d-flex align-items-center justify-content-between px-3 py-3 menu-item cursor-pointer"
+           (click)="toggleSettingsMenu()">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-gear me-3"></i>
+          <span>{{ languageService.translate('sidebar.settings') || 'Setting' }}</span>
+        </div>
+        <i class="bi bi-chevron-down" [class.rotate-180]="settingsMenuOpen"></i>
+      </div>
+      
+      <div class="submenu" [class.show]="settingsMenuOpen">
+        <a routerLink="/settings/general" class="nav-link px-5 py-2 text-decoration-none submenu-item">
+          <span>General</span>
+        </a>
+        <a routerLink="/settings/users" class="nav-link px-5 py-2 text-decoration-none submenu-item">
+          <span>User Account</span>
+        </a>
+        <a routerLink="/settings/project" class="nav-link px-5 py-2 text-decoration-none submenu-item">
+          <span>Project</span>
+        </a>
+        <a routerLink="/settings/categories" class="nav-link px-5 py-2 text-decoration-none submenu-item">
+          <span>Ticket Categories</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>

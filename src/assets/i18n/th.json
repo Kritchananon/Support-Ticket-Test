@@ -1,0 +1,65 @@
+{
+  "sidebar": {
+    "logo": "Support Ticket",
+    "dashboard": "แดชบอร์ด",
+    "newTicket": "สร้างตั๋วใหม่",
+    "allTickets": "ตั๋วทั้งหมด",
+    "report": "รายงาน",
+    "settings": "ตั้งค่า"
+  },
+  "navbar": {
+    "language": "ภาษา",
+    "thai": "ไทย",
+    "english": "อังกฤษ",
+    "profile": "โปรไฟล์ของฉัน",
+    "settings": "ตั้งค่า",
+    "logout": "ออกจากระบบ"
+  },
+  "dashboard": {
+    "title": "แดชบอร์ด",
+    "selectMonth": "เลือกเดือน",
+    "selectYear": "เลือกปี",
+    "totalTickets": "ตั๋วทั้งหมด",
+    "newTickets": "ตั๋วใหม่",
+    "inProgress": "กำลังดำเนินการ",
+    "completed": "เสร็จสิ้น",
+    "dailyChart": "รายงานรายวัน",
+    "monthlyChart": "รายงานรายเดือน",
+    "categoryChart": "แบ่งตามหมวดหมู่"
+  },
+  "newTicket": {
+    "title": "สร้างตั๋วใหม่",
+    "ticketTitle": "หัวข้อตั๋ว",
+    "category": "หมวดหมู่",
+    "priority": "ระดับความสำคัญ",
+    "description": "รายละเอียด",
+    "attachment": "แนบไฟล์",
+    "submit": "ส่งตั๋ว",
+    "cancel": "ยกเลิก",
+    "selectCategory": "เลือกหมวดหมู่",
+    "selectPriority": "เลือกความสำคัญ",
+    "priorities": {
+      "low": "ต่ำ",
+      "medium": "ปานกลาง",
+      "high": "สูง",
+      "urgent": "ด่วน"
+    }
+  },
+  "allTickets": {
+    "title": "ตั๋วทั้งหมด",
+    "search": "ค้นหา",
+    "filter": "กรอง",
+    "status": "สถานะ",
+    "created": "วันที่สร้าง",
+    "actions": "การดำเนินการ",
+    "view": "ดู",
+    "edit": "แก้ไข",
+    "delete": "ลบ",
+    "statusOptions": {
+      "all": "ทั้งหมด",
+      "new": "ใหม่",
+      "inProgress": "กำลังดำเนินการ",
+      "completed": "เสร็จสิ้น"
+    }
+  }
+}

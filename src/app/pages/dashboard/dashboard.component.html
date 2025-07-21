@@ -1,0 +1,166 @@
+<!-- src/app/pages/dashboard/dashboard.component.html -->
+<!-- Breadcrumb -->
+<div class="breadcrumb-container">
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <span>{{ languageService.translate('dashboard.title') }}</span>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        <i class="bi bi-chevron-right"></i>
+        <span>{{ languageService.translate('dashboard.title') }}</span>
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<!-- Dashboard Header -->
+<div class="dashboard-header">
+  <div class="dashboard-header-content">
+    <h2 class="dashboard-title">{{ languageService.translate('dashboard.title') }}</h2>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+      <!-- Total Tickets -->
+      <div class="stat-card stat-card-primary">
+        <div class="stat-icon-wrapper">
+          <div class="stat-icon-circle">
+            <i class="bi bi-clipboard-data"></i>
+          </div>
+        </div>
+        <div class="stat-info">
+          <h6 class="stat-label">{{ languageService.translate('dashboard.totalTickets') }}</h6>
+          <h3 class="stat-value">{{ dashboardStats.totalTickets }}</h3>
+        </div>
+      </div>
+
+      <!-- New Tickets -->
+      <div class="stat-card stat-card-warning">
+        <div class="stat-icon-wrapper">
+          <div class="stat-icon-circle">
+            <i class="bi bi-plus-circle-fill"></i>
+          </div>
+        </div>
+        <div class="stat-info">
+          <h6 class="stat-label">{{ languageService.translate('dashboard.newTickets') }}</h6>
+          <h3 class="stat-value">{{ dashboardStats.newTickets }}</h3>
+        </div>
+      </div>
+
+      <!-- In Progress -->
+      <div class="stat-card stat-card-info">
+        <div class="stat-icon-wrapper">
+          <div class="stat-icon-circle">
+            <i class="bi bi-clock-history"></i>
+          </div>
+        </div>
+        <div class="stat-info">
+          <h6 class="stat-label">{{ languageService.translate('dashboard.inProgress') }}</h6>
+          <h3 class="stat-value">{{ dashboardStats.inProgress }}</h3>
+        </div>
+      </div>
+
+      <!-- Completed -->
+      <div class="stat-card stat-card-success">
+        <div class="stat-icon-wrapper">
+          <div class="stat-icon-circle">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+        </div>
+        <div class="stat-info">
+          <h6 class="stat-label">{{ languageService.translate('dashboard.completed') }}</h6>
+          <h3 class="stat-value">{{ dashboardStats.completed }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Charts Section -->
+<div class="charts-section">
+  <!-- Monthly Chart -->
+  <div class="chart-card chart-card-large">
+    <div class="chart-header">
+      <h5 class="chart-title">All Tickets at Month</h5>
+      <div class="chart-controls">
+        <div class="chart-legend">
+          <div class="legend-item">
+            <div class="legend-color legend-warning"></div>
+            <span>New Ticket</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color legend-success"></div>
+            <span>Complete</span>
+          </div>
+        </div>
+        <div class="chart-selectors">
+          <select class="form-select" [(ngModel)]="selectedMonth" (change)="updateChart()">
+            <option value="2">February</option>
+          </select>
+          <select class="form-select" [(ngModel)]="selectedYear" (change)="updateChart()">
+            <option value="2025">2025</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="chart-content">
+      <!-- Chart placeholder -->
+      <div class="chart-placeholder">
+        <div class="chart-area-visual"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie Chart -->
+  <div class="chart-card chart-card-small">
+    <div class="chart-header">
+      <h5 class="chart-title">Ticket Summary by Categories</h5>
+    </div>
+    <div class="chart-content">
+      <div class="pie-chart-container">
+        <div class="pie-chart"></div>
+      </div>
+      <div class="pie-legend">
+        <div class="pie-legend-column">
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #33c5dd;"></div>
+            <span>บันทึกข้อมูลไม่ได้</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #5873f8;"></div>
+            <span>ปัญหาเจอบัค</span>
+          </div>
+        </div>
+        <div class="pie-legend-column">
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #dc3545;"></div>
+            <span>ระบบล้ม/ใช้งานไม่ได้</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #6c757d;"></div>
+            <span>อื่นๆ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Chart Section -->
+<div class="bottom-chart-section">
+  <div class="chart-card chart-card-full">
+    <div class="chart-header">
+      <h5 class="chart-title">All Ticket Summary by Categories</h5>
+      <div class="chart-controls">
+        <select class="form-select">
+          <option value="Action">Action</option>
+        </select>
+      </div>
+    </div>
+    <div class="chart-content">
+      <div class="category-chart-placeholder">
+        <div class="category-chart-visual"></div>
+      </div>
+    </div>
+  </div>
+</div>
