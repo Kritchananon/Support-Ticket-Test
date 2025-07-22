@@ -47,10 +47,9 @@
                 type="button" 
                 data-bs-toggle="dropdown" 
                 aria-expanded="false">
-          <img src="/assets/images/user-avatar.png" 
-               alt="User" 
-               width="28" 
-               height="28">
+          <div class="user-avatar">
+            <i class="bi bi-person-circle"></i>
+          </div>
           <span>Hi, wasan</span>
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
@@ -62,7 +61,7 @@
           </li>
           <li>
             <a class="dropdown-item" href="#" role="button">
-              <i class="bi bi-gear"></i>
+              <i class="bi bi-gear-fill"></i>
               <span>{{ languageService.translate('navbar.settings') }}</span>
             </a>
           </li>

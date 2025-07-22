@@ -21,11 +21,36 @@
     "selectYear": "Select Year",
     "totalTickets": "Total Tickets",
     "newTickets": "New Tickets",
+    "newTicket": "New Ticket",
     "inProgress": "In Progress",
     "completed": "Completed",
+    "complete": "Complete",
+    "allTicketsAtMonth": "All Tickets at Month",
+    "allTicketSummaryByCategories": "All Ticket Summary by Categories",
+    "ticketSummaryByCategories": "Ticket Summary by Categories",
     "dailyChart": "Daily Report",
     "monthlyChart": "Monthly Report",
-    "categoryChart": "Category Breakdown"
+    "categoryChart": "Category Breakdown",
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "categories": {
+      "dataEntry": "Data Entry Issues",
+      "systemDown": "System Down/Unavailable",
+      "bugIssue": "Bug Issues",
+      "others": "Others"
+    }
   },
   "newTicket": {
     "title": "New Ticket",

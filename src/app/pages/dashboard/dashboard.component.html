@@ -25,7 +25,7 @@
       <div class="stat-card stat-card-primary">
         <div class="stat-icon-wrapper">
           <div class="stat-icon-circle">
-            <i class="bi bi-clipboard-data"></i>
+            <i class="bi bi-ticket-perforated"></i>
           </div>
         </div>
         <div class="stat-info">
@@ -38,7 +38,7 @@
       <div class="stat-card stat-card-warning">
         <div class="stat-icon-wrapper">
           <div class="stat-icon-circle">
-            <i class="bi bi-plus-circle-fill"></i>
+            <i class="bi bi-ticket-detailed"></i>
           </div>
         </div>
         <div class="stat-info">
@@ -51,7 +51,7 @@
       <div class="stat-card stat-card-info">
         <div class="stat-icon-wrapper">
           <div class="stat-icon-circle">
-            <i class="bi bi-clock-history"></i>
+            <i class="bi bi-chat-dots"></i>
           </div>
         </div>
         <div class="stat-info">
@@ -64,7 +64,7 @@
       <div class="stat-card stat-card-success">
         <div class="stat-icon-wrapper">
           <div class="stat-icon-circle">
-            <i class="bi bi-check-circle-fill"></i>
+            <i class="bi bi-check-circle"></i>
           </div>
         </div>
         <div class="stat-info">
@@ -76,90 +76,106 @@
   </div>
 </div>
 
-<!-- Charts Section -->
-<div class="charts-section">
-  <!-- Monthly Chart -->
-  <div class="chart-card chart-card-large">
+<!-- Monthly Chart (Full Width) -->
+<div class="monthly-chart-section">
+  <div class="chart-card chart-card-full">
     <div class="chart-header">
-      <h5 class="chart-title">All Tickets at Month</h5>
+      <h5 class="chart-title">{{ languageService.translate('dashboard.allTicketsAtMonth') }}</h5>
       <div class="chart-controls">
         <div class="chart-legend">
           <div class="legend-item">
             <div class="legend-color legend-warning"></div>
-            <span>New Ticket</span>
+            <span>{{ languageService.translate('dashboard.newTicket') }}</span>
           </div>
           <div class="legend-item">
             <div class="legend-color legend-success"></div>
-            <span>Complete</span>
+            <span>{{ languageService.translate('dashboard.complete') }}</span>
           </div>
         </div>
         <div class="chart-selectors">
           <select class="form-select" [(ngModel)]="selectedMonth" (change)="updateChart()">
-            <option value="2">February</option>
+            <option value="2">{{ getMonthTranslation(2) }}</option>
+            <option value="1">{{ getMonthTranslation(1) }}</option>
+            <option value="3">{{ getMonthTranslation(3) }}</option>
+            <option value="4">{{ getMonthTranslation(4) }}</option>
+            <option value="5">{{ getMonthTranslation(5) }}</option>
+            <option value="6">{{ getMonthTranslation(6) }}</option>
+            <option value="7">{{ getMonthTranslation(7) }}</option>
+            <option value="8">{{ getMonthTranslation(8) }}</option>
+            <option value="9">{{ getMonthTranslation(9) }}</option>
+            <option value="10">{{ getMonthTranslation(10) }}</option>
+            <option value="11">{{ getMonthTranslation(11) }}</option>
+            <option value="12">{{ getMonthTranslation(12) }}</option>
           </select>
           <select class="form-select" [(ngModel)]="selectedYear" (change)="updateChart()">
             <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
           </select>
         </div>
       </div>
     </div>
     <div class="chart-content">
-      <!-- Chart placeholder -->
-      <div class="chart-placeholder">
-        <div class="chart-area-visual"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pie Chart -->
-  <div class="chart-card chart-card-small">
-    <div class="chart-header">
-      <h5 class="chart-title">Ticket Summary by Categories</h5>
-    </div>
-    <div class="chart-content">
-      <div class="pie-chart-container">
-        <div class="pie-chart"></div>
-      </div>
-      <div class="pie-legend">
-        <div class="pie-legend-column">
-          <div class="legend-item">
-            <div class="legend-color" style="background-color: #33c5dd;"></div>
-            <span>บันทึกข้อมูลไม่ได้</span>
-          </div>
-          <div class="legend-item">
-            <div class="legend-color" style="background-color: #5873f8;"></div>
-            <span>ปัญหาเจอบัค</span>
-          </div>
-        </div>
-        <div class="pie-legend-column">
-          <div class="legend-item">
-            <div class="legend-color" style="background-color: #dc3545;"></div>
-            <span>ระบบล้ม/ใช้งานไม่ได้</span>
-          </div>
-          <div class="legend-item">
-            <div class="legend-color" style="background-color: #6c757d;"></div>
-            <span>อื่นๆ</span>
-          </div>
-        </div>
+      <!-- Area Chart with actual data visualization -->
+      <div class="monthly-chart-container">
+        <canvas #monthlyChart width="1113" height="276"></canvas>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Bottom Chart Section -->
-<div class="bottom-chart-section">
-  <div class="chart-card chart-card-full">
+<!-- Bottom Charts Section -->
+<div class="charts-section">
+  <!-- Category Summary Chart (Left) -->
+  <div class="chart-card chart-card-large">
     <div class="chart-header">
-      <h5 class="chart-title">All Ticket Summary by Categories</h5>
+      <h5 class="chart-title">{{ languageService.translate('dashboard.allTicketSummaryByCategories') }}</h5>
       <div class="chart-controls">
-        <select class="form-select">
-          <option value="Action">Action</option>
+        <select class="form-select" [(ngModel)]="selectedCategoryYear" (change)="updateCategoryChart()">
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
         </select>
       </div>
     </div>
     <div class="chart-content">
-      <div class="category-chart-placeholder">
-        <div class="category-chart-visual"></div>
+      <!-- Line Chart with Thai months -->
+      <div class="category-line-chart-container">
+        <canvas #categoryChart width="778" height="276"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie Chart (Right) -->
+  <div class="chart-card chart-card-small">
+    <div class="chart-header">
+      <h5 class="chart-title">{{ languageService.translate('dashboard.ticketSummaryByCategories') }}</h5>
+    </div>
+    <div class="chart-content">
+      <div class="pie-chart-container">
+        <canvas #pieChart width="220" height="220"></canvas>
+      </div>
+      <div class="pie-legend">
+        <div class="pie-legend-column">
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #33c5dd;"></div>
+            <span>{{ languageService.translate('dashboard.categories.dataEntry') }}</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #5873f8;"></div>
+            <span>{{ languageService.translate('dashboard.categories.bugIssue') }}</span>
+          </div>
+        </div>
+        <div class="pie-legend-column">
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #dc3545;"></div>
+            <span>{{ languageService.translate('dashboard.categories.systemDown') }}</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #6c757d;"></div>
+            <span>{{ languageService.translate('dashboard.categories.others') }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

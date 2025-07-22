@@ -21,11 +21,36 @@
     "selectYear": "เลือกปี",
     "totalTickets": "ตั๋วทั้งหมด",
     "newTickets": "ตั๋วใหม่",
+    "newTicket": "ตั๋วใหม่",
     "inProgress": "กำลังดำเนินการ",
     "completed": "เสร็จสิ้น",
+    "complete": "เสร็จสิ้น",
+    "allTicketsAtMonth": "ตั๋วทั้งหมดในเดือน",
+    "allTicketSummaryByCategories": "สรุปตั๋วทั้งหมดตามหมวดหมู่",
+    "ticketSummaryByCategories": "สรุปตั๋วตามหมวดหมู่",
     "dailyChart": "รายงานรายวัน",
     "monthlyChart": "รายงานรายเดือน",
-    "categoryChart": "แบ่งตามหมวดหมู่"
+    "categoryChart": "แบ่งตามหมวดหมู่",
+    "months": {
+      "january": "มกราคม",
+      "february": "กุมภาพันธ์",
+      "march": "มีนาคม",
+      "april": "เมษายน",
+      "may": "พฤษภาคม",
+      "june": "มิถุนายน",
+      "july": "กรกฎาคม",
+      "august": "สิงหาคม",
+      "september": "กันยายน",
+      "october": "ตุลาคม",
+      "november": "พฤศจิกายน",
+      "december": "ธันวาคม"
+    },
+    "categories": {
+      "dataEntry": "บันทึกข้อมูลไม่ได้",
+      "systemDown": "ระบบล้ม/ใช้งานไม่ได้",
+      "bugIssue": "ปัญหาเจอบัค",
+      "others": "อื่นๆ"
+    }
   },
   "newTicket": {
     "title": "สร้างตั๋วใหม่",
